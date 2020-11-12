@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppControlEmpleados.Login" FlowDirection="LeftToRight">
+    <ContentPage.Content >
+        <StackLayout BackgroundColor="WhiteSmoke">
+            <Label Text="Inicio de Sesion"  FontAttributes="Bold" FontSize="20"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Image x:Name="InicioSesion" WidthRequest="200" HeightRequest="200"></Image>
+        <StackLayout VerticalOptions="FillAndExpand"  HorizontalOptions="Fill"  >
+                <Label x:Name="txtUser" Text="Usuario" TextColor="Black"></Label>
+            <Entry TextColor="Black" HorizontalOptions="Fill"  Placeholder="Usuario" ></Entry>
+            <Label  x:Name="txtpass" Text="Usuario" TextColor="Black"></Label>
+
+            <Entry TextColor="Black"  HorizontalOptions="Fill"   Placeholder="Clave" IsPassword="True" ></Entry>
+        </StackLayout>
+        <StackLayout   VerticalOptions="End"  >
+                <Button Text="iniciar Session" CornerRadius="15" BackgroundColor="LightBlue"  Clicked="Button_Clicked"   />
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

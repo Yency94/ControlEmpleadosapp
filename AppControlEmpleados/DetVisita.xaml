@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppControlEmpleados.DetVisita">
+    <ContentPage.Content >
+        <StackLayout  HorizontalOptions="Fill"  BackgroundColor="WhiteSmoke">
+            <Label Text="Detalles de la Visita " FontAttributes="Bold" FontSize="20"
+               
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label></Label>
+            <Label Text="Cliente"></Label>
+            <Entry Placeholder="" IsReadOnly="True" ></Entry>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <ImageButton x:Name="btnCamara" WidthRequest="60" BackgroundColor="#f4511e"  CornerRadius="8" HeightRequest="60"  HorizontalOptions="Start" Padding="10"></ImageButton>
+                <ImageButton x:Name="btnAudio" WidthRequest="60" BackgroundColor="#ff9800"  CornerRadius="8" HeightRequest="60" HorizontalOptions="End" Padding="10"></ImageButton>
+            </StackLayout>
+            <Label Text="Ubicacion"></Label>
+            <Entry Placeholder="Latitud" x:Name="txtlat"></Entry>
+            <Entry Placeholder="Longitud" x:Name="txtlong"></Entry>
+           
+            <Entry Placeholder="Descripcion" x:Name="txtdesc"></Entry>
+            
+           
+                <Button x:Name="btnGuarda" Text="Guardar Detalle Visita" BackgroundColor="#7cb342"  CornerRadius="8" VerticalOptions="EndAndExpand"></Button>
+            
+        </StackLayout>
+        
+        </ContentPage.Content >
+</ContentPage>
