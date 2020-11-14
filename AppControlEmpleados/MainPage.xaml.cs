@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.IO;
 using System.Net;
+using Xamarin.Essentials;
+using System.IO;
 
 namespace AppControlEmpleados
 {
@@ -153,6 +155,51 @@ namespace AppControlEmpleados
         {
             DetVisita detVisita = new DetVisita();
             await Navigation.PushAsync(detVisita, true);
+        }
+
+        private async void btnSincronizar_Clicked(object sender, EventArgs e)
+        {
+            var profiles = Connectivity.ConnectionProfiles;
+            //Verifica que el wifi este activo
+            if (profiles.Contains(ConnectionProfile.WiFi))
+            {
+                // Active Wi-Fi connection.
+                var current = Connectivity.NetworkAccess;
+                //Verifica que tenga conexion a internet
+                if (current != NetworkAccess.Internet)
+                {
+                    await DisplayAlert("Alerta", "Verifica tu conexión a Internet", "OK");
+                }
+                //Si tiene acceso a internet ejectua el metodo para subir archivos
+                await DisplayAlert("Alerta", "Tienes Wifi", "OK");
+            }
+            //Verifica Que los datos moviles esten activos
+            else if (profiles.Contains(ConnectionProfile.Cellular))
+            {
+                // Active Wi-Fi connection.
+                var current = Connectivity.NetworkAccess;
+                //Verifica que tenga conexion a internet
+                if (current != NetworkAccess.Internet)
+                {
+                    await DisplayAlert("Alerta", "Verifica tu conexión a Internet", "OK");
+                }
+                
+            }
+            String filepath =  obtenerArchivo();
+            
+        }
+        public async void SubirImagenFtp(string filePath)
+        {
+            if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                await DisplayAlert("Upload", DependencyService.Get<IFtpWebRequest>().upload("ftp://ftp.swfwmd.state.fl.us", filePath, "Anonymous", "gabriel@icloud.com", "/pub/incoming"), "Ok");
+
+            await Navigation.PopAsync();
+        }
+
+        public string obtenerArchivo()
+        {
+            var backingFile = Path.Combine(FileSystem.AppDataDirectory, "Pictures/Sample/test.jpg");
+            return backingFile;
         }
     }
 }

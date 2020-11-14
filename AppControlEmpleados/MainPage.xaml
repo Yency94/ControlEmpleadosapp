@@ -38,7 +38,7 @@
 
 
             <StackLayout x:Name="pie" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="CenterAndExpand" >
-                <ImageButton   BackgroundColor="#15A3D2" VerticalOptions="Start" FlowDirection="LeftToRight" CornerRadius="15" x:Name="btnSincronizar" WidthRequest="100" HeightRequest="60" ></ImageButton>
+                <ImageButton   BackgroundColor="#15A3D2" VerticalOptions="Start" FlowDirection="LeftToRight" CornerRadius="15" x:Name="btnSincronizar" WidthRequest="100" HeightRequest="60" Clicked="btnSincronizar_Clicked" ></ImageButton>
                 <ImageButton   BackgroundColor="#2e7d32" VerticalOptions="Center" Padding="8" CornerRadius="15" FlowDirection="LeftToRight"  x:Name="btnRefrech" WidthRequest="100" HeightRequest="60"  ></ImageButton>
                 <ImageButton   BackgroundColor="#d32f2f"  VerticalOptions="EndAndExpand" Padding="8" AnchorX="1" AnchorY="1" BorderColor="#DFBBBB" BorderWidth="1" CornerRadius="15" FlowDirection="RightToLeft" x:Name="btnSALIR" WidthRequest="100" HeightRequest="60"  ></ImageButton>
             </StackLayout>
