@@ -14,6 +14,10 @@ namespace AppControlEmpleados
             MainPage = new NavigationPage();
             NavigationPage.SetHasNavigationBar(MainPage, false);
             MainPage.Navigation.PushAsync(new MainPage());
+
+            //Lineas Agregadas
+            Plugin.Media.CrossMedia.Current.Initialize();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

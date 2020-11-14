@@ -11,9 +11,18 @@
             <Label></Label>
             <Label Text="Cliente"></Label>
             <Entry Placeholder="" IsReadOnly="True" ></Entry>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image x:Name="ImagenCamara"/>
+                <ImageButton x:Name="btnCamara" WidthRequest="60" BackgroundColor="#f4511e"  CornerRadius="8" HeightRequest="60"  HorizontalOptions="Start" Padding="10" Clicked="btnCamara_Clicked"></ImageButton>
+            </Grid>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <ImageButton x:Name="btnCamara" WidthRequest="60" BackgroundColor="#f4511e"  CornerRadius="8" HeightRequest="60"  HorizontalOptions="Start" Padding="10"></ImageButton>
-                <ImageButton x:Name="btnAudio" WidthRequest="60" BackgroundColor="#ff9800"  CornerRadius="8" HeightRequest="60" HorizontalOptions="End" Padding="10"></ImageButton>
+               
+                <ImageButton x:Name="btnAudio" WidthRequest="60" BackgroundColor="#ff9800"  CornerRadius="8" HeightRequest="60" HorizontalOptions="End" Padding="10" Clicked="btnAudio_Clicked"></ImageButton>
             </StackLayout>
             <Label Text="Ubicacion"></Label>
             <Entry Placeholder="Latitud" x:Name="txtlat"></Entry>
