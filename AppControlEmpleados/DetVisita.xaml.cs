@@ -170,5 +170,7 @@ namespace AppControlEmpleados
         {
             btnAudio.BackgroundColor = Color.FromHex("#43a047");
         }
+
+
     }
 }
