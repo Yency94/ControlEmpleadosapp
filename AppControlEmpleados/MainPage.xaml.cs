@@ -5,11 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.IO;
+using System.Net;
 
 namespace AppControlEmpleados
 {
     public partial class MainPage : ContentPage
     {
+        string RutaServicios = "http://161.97.77.167:8030/servicioconsultas?verif=SyscomeAuth$280257&q=";
         public MainPage()
         {
             InitializeComponent();
@@ -27,37 +30,67 @@ namespace AppControlEmpleados
 
         private void TxtFecha_DateSelected(object sender, DateChangedEventArgs e)
         {
-            // Actualizar Agenda
-            //  DetalledeAgenda.Children.Clear();
-            detalleProductos.Children.Clear();
-
-            for (int i = 0; i < 5; i++)
+            WebClient _web = new WebClient();
+            string Rutaagenda = RutaServicios + "obteneragenda&fecha=" + txtFecha.Date.ToString("yyyy-MM-dd") + "&Empleado=2";
+            String _info = _web.DownloadString(Rutaagenda);
+            String[] _Agenda = _info.Split(';');
+            List<Agenda> _Agenda2 = new List<Agenda>();
+            foreach (String _l in _Agenda)
             {
+                if (_l.Length > 0)
+                {
+
+
+                    String[] _it = _l.Split('|');
+                    Agenda _Ag = new Agenda();
+                    _Ag.Codcliente = _it[0].ToString();
+                    _Ag.Nombre = _it[1].ToString();
+                    _Ag.Fecha =Convert.ToDateTime( _it[2]);
+                    _Ag.detalle = _it[3].ToString();
+                    _Ag.Zona = Convert.ToInt32(_it[4]);
+                    _Ag.idAgenda = Convert.ToInt32(_it[5]);
+                    _Agenda2.Add(_Ag);
+
+                }
+            }
+            detalleProductos.Children.Clear();
+            foreach (var item in _Agenda2)
+            {
+              
 
                 Label la = new Label
+                    {
+                        Text =item.idAgenda+" Nombre Cliente: " +item.Nombre +" Detalle: "+item.detalle ,
+                        FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label)),
+                        VerticalOptions = LayoutOptions.Center
+                    };
+                    ImageButton imbu = new ImageButton
+                    {
+                        BackgroundColor = Color.BlueViolet,
+                        Source = ImageSource.FromResource("AppControlEmpleados.Imagenes.check-mark.png"),
+                        Padding = 10,
+                        WidthRequest = 60,
+                        HeightRequest = 40,
+
+
+                    };
+                
+
+               
+               
+                imbu.Clicked += async delegate
                 {
-                    Text = "Ciente Prueba",
-                    FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label)),
-                    VerticalOptions = LayoutOptions.Center
+                    TappedEventArgs _e1 = new TappedEventArgs(item.idAgenda);
+                    await Imbu_Clicked(null, _e1);
+                   // imbu.Clicked += (null, _e1);
+
                 };
-                ImageButton imbu = new ImageButton
-                {
-                    BackgroundColor = Color.BlueViolet,
-                    Source = ImageSource.FromResource("AppControlEmpleados.Imagenes.check-mark.png"),
-                    Padding = 10,
-                    WidthRequest = 60,
-                    HeightRequest = 40,
-
-
-                };
-
-                imbu.Clicked += Imbu_Clicked;
-                StackLayout stacla = new StackLayout
-                {
-                    Orientation = StackOrientation.Horizontal,
-                    HorizontalOptions = LayoutOptions.Fill,
-                    Margin = new Thickness(5),
-                    Children =
+                    StackLayout stacla = new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        HorizontalOptions = LayoutOptions.Fill,
+                        Margin = new Thickness(5),
+                        Children =
                     {
                  new Frame
             {
@@ -78,12 +111,12 @@ namespace AppControlEmpleados
 
                         la,
                         imbu
-                        
-                //new Button { BackgroundColor = Color.BlueViolet,Text="Confirm" ,
-                //TextColor=Color.White, 
+
+                        //new Button { BackgroundColor = Color.BlueViolet,Text="Confirm" ,
+                        //TextColor=Color.White, 
 
 
-          
+
                     }
                 }
             }
@@ -91,17 +124,21 @@ namespace AppControlEmpleados
            }
 
 
-                };
-                detalleProductos.Children.Add(stacla);
+                    };
+                    detalleProductos.Children.Add(stacla);
+                
+
             }
-
-
 
         }
 
-        private void Imbu_Clicked(object sender, EventArgs e)
+        private async Task Imbu_Clicked(object sender, TappedEventArgs e)
         {
-            throw new NotImplementedException();
+            DetVisita detVisita = new DetVisita();
+            await Navigation.PushAsync(detVisita, true);
+            e.Parameter.ToString();
+
+          
         }
 
         private async void btnConf_Clicked(object sender, EventArgs e)
