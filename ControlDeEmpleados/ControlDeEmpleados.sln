@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlDeEmpleados", "ControlDeEmpleados\ControlDeEmpleados.csproj", "{A2E6FB92-F7A7-4BFB-B83A-09B2E12F0209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELEmpleados", "ELEmpleados\ELEmpleados.csproj", "{C5EE23C1-FD7E-40D3-B70D-E35DDBE2F436}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLEmpleados", "DLEmpleados\DLEmpleados.csproj", "{74772F60-7F9F-47DF-80DA-D1E0A28B0366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLEmpleados", "BLEmpleados\BLEmpleados.csproj", "{AE17A4CA-B6F0-4491-8D2A-7B0CC2D831F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlEmpleadoServicios", "ControlEmpleadoServicios\ControlEmpleadoServicios.csproj", "{9A01E0C0-8398-4B8C-9A22-D6E757A37552}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2E6FB92-F7A7-4BFB-B83A-09B2E12F0209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E6FB92-F7A7-4BFB-B83A-09B2E12F0209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E6FB92-F7A7-4BFB-B83A-09B2E12F0209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E6FB92-F7A7-4BFB-B83A-09B2E12F0209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5EE23C1-FD7E-40D3-B70D-E35DDBE2F436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5EE23C1-FD7E-40D3-B70D-E35DDBE2F436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5EE23C1-FD7E-40D3-B70D-E35DDBE2F436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5EE23C1-FD7E-40D3-B70D-E35DDBE2F436}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74772F60-7F9F-47DF-80DA-D1E0A28B0366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74772F60-7F9F-47DF-80DA-D1E0A28B0366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74772F60-7F9F-47DF-80DA-D1E0A28B0366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74772F60-7F9F-47DF-80DA-D1E0A28B0366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE17A4CA-B6F0-4491-8D2A-7B0CC2D831F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE17A4CA-B6F0-4491-8D2A-7B0CC2D831F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE17A4CA-B6F0-4491-8D2A-7B0CC2D831F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE17A4CA-B6F0-4491-8D2A-7B0CC2D831F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A01E0C0-8398-4B8C-9A22-D6E757A37552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A01E0C0-8398-4B8C-9A22-D6E757A37552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A01E0C0-8398-4B8C-9A22-D6E757A37552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A01E0C0-8398-4B8C-9A22-D6E757A37552}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {375FD4D4-2CF8-45D3-9E57-E6A6A6E99962}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://joseantoniopadillavela.visualstudio.com/
+		SccProjectUniqueName0 = ELEmpleados\\ELEmpleados.csproj
+		SccProjectName0 = ELEmpleados
+		SccAuxPath0 = https://joseantoniopadillavela.visualstudio.com
+		SccLocalPath0 = ELEmpleados
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = DLEmpleados\\DLEmpleados.csproj
+		SccProjectName1 = DLEmpleados
+		SccAuxPath1 = https://joseantoniopadillavela.visualstudio.com
+		SccLocalPath1 = DLEmpleados
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = BLEmpleados\\BLEmpleados.csproj
+		SccProjectName2 = BLEmpleados
+		SccAuxPath2 = https://joseantoniopadillavela.visualstudio.com
+		SccLocalPath2 = BLEmpleados
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ControlDeEmpleados\\ControlDeEmpleados.csproj
+		SccProjectName3 = ControlDeEmpleados
+		SccAuxPath3 = https://joseantoniopadillavela.visualstudio.com
+		SccLocalPath3 = ControlDeEmpleados
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = ControlEmpleadoServicios\\ControlEmpleadoServicios.csproj
+		SccProjectName4 = ControlEmpleadoServicios
+		SccAuxPath4 = https://joseantoniopadillavela.visualstudio.com
+		SccLocalPath4 = ControlEmpleadoServicios
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal
