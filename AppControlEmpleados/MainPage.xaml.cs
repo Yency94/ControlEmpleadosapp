@@ -149,6 +149,7 @@ namespace AppControlEmpleados
                 
             }
             String filepath =  obtenerArchivo();
+            subirPorFtp(filepath);
             
         }
         public async void SubirImagenFtp(string filePath)
@@ -163,6 +164,14 @@ namespace AppControlEmpleados
         {
             var backingFile = Path.Combine(FileSystem.AppDataDirectory, "Pictures/Sample/test.jpg");
             return backingFile;
+        }
+
+        public async void subirPorFtp(string filepath)
+        {
+            if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                await DisplayAlert("Upload", DependencyService.Get<IFtpWebRequest>().upload("ftp://ftp.swfwmd.state.fl.us", filepath, "Anonymous", "gabriel@icloud.com", "/pub/incoming"), "Ok");
+
+            await Navigation.PopAsync();
         }
     }
 }

@@ -8,6 +8,7 @@ using Plugin.Media.Abstractions;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Plugin.AudioRecorder;
+using Plugin.Geolocator;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,6 +21,9 @@ namespace AppControlEmpleados
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            obtenerLatLong();
+            ocultarUbicacion();
+            formatoFecha();
             btnCamara.Source = ImageSource.FromResource("AppControlEmpleados.Imagenes.camera.png");
             btnAudio.Source = ImageSource.FromResource("AppControlEmpleados.Imagenes.microphone.png");
         }
@@ -171,6 +175,49 @@ namespace AppControlEmpleados
             btnAudio.BackgroundColor = Color.FromHex("#43a047");
         }
 
+        public async Task obtenerLatLong()
+        {
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 50;
+            TimeSpan span4 = TimeSpan.FromSeconds(1);
+            var position = await locator.GetPositionAsync(timeout: span4);
+            txtlat.Text = position.Latitude.ToString();
+            txtlong.Text = position.Longitude.ToString();
+        }
 
+        public void habilitarFechaReprogramar()
+        {
+            if (chxReprogramar.IsChecked == true)
+            {
+                txtFechaReprogramar.IsEnabled = true;
+            }
+            else
+            {
+                txtFechaReprogramar.IsEnabled = false;
+            }
+        }
+
+        private void chxReprogramar_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            habilitarFechaReprogramar();
+        }
+
+        private void ocultarUbicacion()
+        {
+            txtlat.IsVisible = false;
+            txtlong.IsVisible = false;
+        }
+
+        private void formatoFecha()
+        {
+            string formato = "dd/MM/yyyy";
+            txtFechaActual.Format = formato ;
+            txtFechaReprogramar.Format = formato;
+        }
+
+        private async Task guardarDetalleAgenda()
+        {
+
+        }
     }
 }

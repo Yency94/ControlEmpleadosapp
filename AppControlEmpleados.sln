@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppControlEmpleados.Android", "AppControlEmpleados.Android\AppControlEmpleados.Android.csproj", "{FE09F160-4318-453D-96F3-7A0CB71D23CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppControlEmpleados", "AppControlEmpleados\AppControlEmpleados.csproj", "{68E8002F-CFA7-4D1C-BD09-5C9A69DB69F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppControlEmpleados", "AppControlEmpleados\AppControlEmpleados.csproj", "{68E8002F-CFA7-4D1C-BD09-5C9A69DB69F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
